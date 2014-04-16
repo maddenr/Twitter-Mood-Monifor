@@ -10,7 +10,8 @@ DBC = SQLDBConnector()
 TM = TweetManipulator("TOBECHANGED")
 radius = "10mi" #search radius
 Locations = {
-	"boston" : "42.3581,-71.0636" #Boston
+	"boston" : "42.3581,-71.0636", #Boston
+	"nyc" : "40.700,-74.00"
 
 }
 
@@ -56,17 +57,19 @@ def main():
 			totalHappy+currentNumHappy,
 			totalUnhappy+currentNumUnhappy
 		)])
-	time.sleep(30)
+	time.sleep(5)
 
 # safely close the DB connection upon exit
 try:
 	while True:
 		main()
-except KeyboardInterrupt e:
+except (KeyboardInterrupt):
 	DBC.__closeDB__()
 	sys.exit()
 except :
-	logging.exception(sys.exc_info()[0])
+	#logging.exception(sys.exc_info()[0])
+	print sys.exec_info()[0]
 	DBC.__closeDB__()
+	sys.exit()
 	#DBC.__init__()
 	#main()

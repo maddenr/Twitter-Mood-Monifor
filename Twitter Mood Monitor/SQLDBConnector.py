@@ -36,7 +36,7 @@ class SQLDBConnector:
 #In:		None
 #Out:	sqlite.Connection Object
 	def __openDB__(self):
-		return sqlite3.connect("MoodMonitor")
+		return sqlite3.connect("MoodMonitor.db")
 
 		
 # Safely close the db connection
