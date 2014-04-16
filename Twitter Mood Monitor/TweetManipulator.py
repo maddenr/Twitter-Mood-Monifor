@@ -26,7 +26,7 @@ class TweetManipulator:
 	def __reinit__(self, geoString = None):
 		assert geoString is not None
 		self.tweetDataList = []
-		self.searchURL = 'https://api.twitter.com/1.1/search/tweets.json?q=""&geocode="'+geoString+'"&count=100'
+		self.searchURL = 'https://api.twitter.com/1.1/search/tweets.json?q=""&geocode="'+geoString+'"&count=1000&result_type=recent'
 
 #performing the search
 #In:		None
